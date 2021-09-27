@@ -21,6 +21,10 @@ function MemoryGame() {
         // CHECK IF IMAGE IS SELECTED
         console.log(image, index)
 
+        if (cardsChosenIds?.length === 1 && cardsChosenIds[0] === index) {
+            return
+        }
+
         // Check if 
         if (cardsChosen?.length < 2) {
 
@@ -36,11 +40,9 @@ function MemoryGame() {
                 setTimeout(() => {
                     setCardsChosenIds([])
                     setCardsChosen([])
-                }, 2000)
+                }, 700)
                 
-            } else {
-
-            }
+            } 
         }
     }
 
@@ -48,9 +50,6 @@ function MemoryGame() {
         return cardsChosenIds?.includes(index) || openCards?.includes(image)
     }
 
-    function checkForMatch() {
-
-    }
 
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
